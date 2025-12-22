@@ -12,19 +12,17 @@ app.use(express.urlencoded({extended:true}))
 
 import { v2 as cloudinary } from "cloudinary";
 
-cloudinary.config({
-  cloud_name: "dfxc3sati",
-  api_key: "787799863893888",
-  api_secret: "d7nIXfqJJu_Gml_EMgIhY5lRE98",
+cloudinary.config({ //yo configuraatin to cloudinary ko website bata lyaeko ho,node js section ma cha
+  cloud_name: "dxidiikma",
+  api_key: "187515665435472",
+  api_secret: "SdKkyEh4uPXZmPUcmz4Nb3-62Ac", //yo cahi cloudinary ko website ko api section bata lyaeko ho,suru choti use garne bela ma yo code visible hudaina email ma otp auxa halesi hunxa
 });
 
+//database connect to keep url from cloudinary after uplopading it in cloudinary
 mongoose
-  .connect(
-    process.env.MONGO_URL,
-    {
-      dbName: "fullstack_authentication_with_file_upload",
-    }
-  )
+  .connect(process.env.MONGO_URL, {
+    dbName: "fullstack_authentication_with_file_upload",
+  })
   .then(() => console.log("MongoDb Connected..!"))
   .catch((err) => console.log(err));
 
